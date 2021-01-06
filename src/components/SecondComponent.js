@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import React from 'react';
+import storeBasket from '../store/Basket';
 import Counter from '../store/Counter';
 
 @observer class SecondComponent extends React.Component {
@@ -14,6 +15,10 @@ import Counter from '../store/Counter';
         Counter.fullName();
     }
 
+    handleChangePrice(e) {
+        storeBasket.price = e.target.value;
+    }
+
     render() {
 
 
@@ -25,6 +30,8 @@ import Counter from '../store/Counter';
                 <h4>
                     {Counter.name}
                 </h4>
+                <div></div>
+                <input type="text" onChange={this.handleChangePrice} />
             </>
         );
     }

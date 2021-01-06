@@ -2,7 +2,6 @@ import { makeAutoObservable } from "mobx";
 
 class Counter {
 
-
     count = 0;
     firstName = '';
     lastName = '';
